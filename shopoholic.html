@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+    background-color: yellow;
+}
+
+@media only screen and (max-width: 500px) {
+    body {
+        background-color: yellow;
+    }
+}
+
+@media only screen and (orientation: landscape) {
+    body {
+        background-color: yellow;
+    }
+}
+#div1 {
+    width: 200px;
+    height: 200px;
+    padding: 10px;
+    border: 1px solid #aaaaaa;
+}
+
+h2{text-size:10px;
+   
+   color:black;
+  }
+ 
+ h1{text-align:center;
+    color:black;
+	}
+	
+	///transition
+div {
+    width: 100px;
+    height: 10px;
+    background: red;
+    -webkit-transition: width 2s; /* For Safari 3.1 to 6.0 */
+    transition: width 2s;
+}
+
+div:hover {
+    width: 600px;
+}
+input{background-color:darkgray;
+font-color:white;
+transform:rotate(20deg);
+}
+
+
+</style>
+<script>
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+	delay(10);
+	 ev.target.removeChild(document.getElementById(data));
+}
+
+
+
+function drop1(ev)
+{
+ev.preventDefault();
+var data=ev.dataTransfer.getData("Text");
+var el = document.getElementById(data);
+el.parentNode.removeChild(el);
+}
+</script>
+</head>
+<body>
+
+<div></div>
+<h1>Forever 21</h1>
+
+<h2>talk the talk... Let the clothes do the talking in logos and patching</h3>
+
+
+ 
+
+<br>
+<img id="drag1" src="1.jpg" draggable="true" ondragstart="drag(event)"   width="200" height="200">
+<img id="drag2" src="2.jpg" draggable="true" ondragstart="drag(event)"  width="200" height="200">
+
+<img id="drag4" src="4.jpg" draggable="true" ondragstart="drag(event)"  width="200" height="200">
+
+<img id="drag6" src="6.jpg" draggable="true" ondragstart="drag(event)"  width="200" height="200">
+<p id="div1"  ondrop="drop(event)" ondragover="allowDrop(event)">Drop here to Set</p>
+<p id="div1" ondrop="drop1(event)" ondragover="allowDrop(event)">  
+            <h3>Drop here to remove</h3>
+    </p>
+
+<br>
+<iframe width="500" height="315" src="https://www.youtube.com/embed/ryUdYUYTcp8" frameborder="0" allowfullscreen></iframe>
+<h2>Stay in Style with Forever 21</h2>
+<h4>Click for more fashion videos</h4>
+<a href="https://www.youtube.com/results?search_query=forever+21+ad"><img src="for21.jpg" width="80px" height="50px" align="center"></a>
+
+<h3>Shop more... Click below</h3>
+<a href="index.html"><input type="button" value="click Me-->"></a> 
+
+</body>
+</html>
